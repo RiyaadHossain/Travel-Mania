@@ -12,7 +12,7 @@ const SignUp = () => {
     value: "",
     error: "",
   });
-  const [createUserWithEmailAndPassword, user, loading, error] =
+  const [createUserWithEmailAndPassword, user, error] =
     useCreateUserWithEmailAndPassword(auth);
 
   const onEmailBlur = (e) => {
@@ -32,9 +32,9 @@ const SignUp = () => {
     }
   };
   const onConfirmPasswordBlur = (e) => {
-    const password = e.target.value;
-    if (/(?=.*\d)/.test(password)) {
-      setConfirmPassword({ value: password, error: "" });
+    const confirmPassword = e.target.value;
+    if (password.value === confirmPassword) {
+      setConfirmPassword({ value: confirmPassword, error: "" });
     } else {
       setConfirmPassword({ value: "", error: "Password didn't match" });
     }
@@ -45,7 +45,7 @@ const SignUp = () => {
       toast.success("Account Created")
     }
     if (error) {
-      toast.error("An Error Occurred")
+      // toast.error("An Error Occurred")
     }
   }, [user, error, navigate])
   const onFormSubmit = e => {
