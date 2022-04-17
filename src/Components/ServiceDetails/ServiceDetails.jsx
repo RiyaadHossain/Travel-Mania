@@ -7,7 +7,7 @@ const ServiceDetails = ({ service }) => {
   return (
     <div className="border rounded-md shadow">
       <img
-        className="p-3 rounded h-[450px] w-96 object-cover"
+        className="p-3 rounded h-[450px] w-full object-cover"
         src={img}
         alt=""
       />
