@@ -1,20 +1,23 @@
 [
   {
     "id": 1,
-    "name": "Sea Beach Travel",
+    "name": "Sea Beach Tour Guide",
     "price": 899,
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi saepe aliquid at minima, suscipit neque nam culpa eos esse amet libero maiores, deserunt fugiat cumque quo tempora quae? In, commodi!",
     "img": "https://i.ibb.co/QbMrtDc/SeaBeach.jpg"
   },
   {
     "id": 2,
-    "name": "Mountain Travel",
+    "name": "Mountain Tour Guide",
     "price": 620,
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi saepe aliquid at minima, suscipit neque nam culpa eos esse amet libero maiores, deserunt fugiat cumque quo tempora quae? In, commodi!",
     "img": "https://i.ibb.co/RDtmyQT/Mountain.jpg"
   },
   {
     "id": 3,
-    "name": "Forest Travel",
+    "name": "Forest Tour Guide",
     "price": 390,
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi saepe aliquid at minima, suscipit neque nam culpa eos esse amet libero maiores, deserunt fugiat cumque quo tempora quae? In, commodi!",
     "img": "https://i.ibb.co/YfxGt3M/Forest.jpg"
   }
 ]
