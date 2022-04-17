@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "name": "Sea Beach Travel",
+    "price": 899,
+    "img": "https://i.ibb.co/QbMrtDc/SeaBeach.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Mountain Travel",
+    "price": 620,
+    "img": "https://i.ibb.co/RDtmyQT/Mountain.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Forest Travel",
+    "price": 390,
+    "img": "https://i.ibb.co/YfxGt3M/Forest.jpg"
+  }
+]
