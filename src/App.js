@@ -1,4 +1,5 @@
 
+import { Toaster } from 'react-hot-toast';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import About from './Components/About/About';
@@ -16,7 +17,8 @@ import Navbar from './Components/Shared/Navbar/Navbar';
 function App() {
   return (
     <div>
-      <Navbar/>
+      <Navbar />
+      <Toaster/>
       <Routes>
         <Route path='/' element={<Home />}/>
         <Route path='/blogs' element={<Blogs />}/>
