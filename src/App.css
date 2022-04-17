@@ -8,3 +8,10 @@
 .testimonial-card{
     background-color: #303841;
 }
+.signUp-container{
+    background-image: url(./Assets/Image/travelBackground.jpg);
+    background-position: center center;
+    background-size: cover;
+    background-blend-mode: overlay;
+    background-color: rgba(0, 0, 0, 0.7);
+}
