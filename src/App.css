@@ -15,3 +15,38 @@
     background-blend-mode: overlay;
     background-color: rgba(0, 0, 0, 0.7);
 }
+
+/* Button Style */
+/* From uiverse.io by @adamgiebl */
+.fancy-button2 {
+    display: flex;
+    align-items: center;
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 17px;
+    padding: 0.7em 1.3em 0.7em 0.9em;
+    color: white;
+    background: rgb(236,136,136);
+    background: radial-gradient(circle, rgb(236, 74, 74) 15%, rgba(220,20,60,1) 78%);
+    border: none;
+    letter-spacing: 0.05em;
+    border-radius: 5px;
+   }
+   
+   .fancy-button2 svg {
+    margin-right: 3px;
+    transform: rotate(30deg);
+    transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+   }
+   
+   .fancy-button2 span {
+    transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+   }
+   
+   .fancy-button2:hover svg {
+    transform: translateX(5px) rotate(90deg);
+   }
+   
+   .fancy-button2:hover span {
+    transform: translateX(7px);
+   }

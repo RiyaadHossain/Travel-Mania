@@ -19,7 +19,7 @@ const Navbar = () => {
   return (
     <div className="container mx-auto flex justify-between items-center h-16">
       <div>
-        <h1 className="text-2xl font-bold">Logo</h1>
+        <h1 className="text-2xl font-bold">Travelmania</h1>
       </div>
       <nav>
         <NavLink
@@ -30,7 +30,7 @@ const Navbar = () => {
         </NavLink>
         <NavLink
           className={({ isActive }) => (isActive ? "active-link" : "link")}
-          to="/blog"
+          to="/blogs"
         >
           Blog
         </NavLink>

@@ -6,7 +6,7 @@ import { BsTwitter } from "react-icons/bs";
 const Footer = () => {
   const date = new Date();
   return (
-    <footer className="flex justify-center items-center py-8 bg-neutral-900 text-white ">
+    <footer className="flex justify-center items-center py-10 bg-neutral-900 text-white ">
       <div className="">
         <div className="flex justify-center mb-8 text-center">
           <p className="text-2xl mr-5 ">
