@@ -12,6 +12,7 @@ import NotFound from './Components/NotFound/NotFound';
 import RequireAuth from './Components/RequireAuth/RequireAuth';
 import Footer from './Components/Shared/Footer/Footer';
 import Navbar from './Components/Shared/Navbar/Navbar';
+import SuccessMsg from './Components/SuccessMsg/SuccessMsg';
 
 
 function App() {
@@ -27,7 +28,8 @@ function App() {
         <Route path='/signup' element={<SignUp />} />
         <Route path='/checkout' element={<RequireAuth>
           <CheckOut/>
-        </RequireAuth> }/>
+        </RequireAuth>} />
+        <Route path='/procceed' element={<SuccessMsg />}/>
         <Route path='*' element={<NotFound />}/>
       </Routes>
       <Footer/>
