@@ -1,7 +1,7 @@
 /* From uiverse.io by @westitan */
 .facy-button1 {
     position: relative;
-    padding: 15px 35px;
+    padding: 13px 35px;
     display: block;
     text-decoration: none;
     text-transform: uppercase;
@@ -13,7 +13,7 @@
    .facy-button1 span {
     position: relative;
     color: #fff;
-    font-family: Arial;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     letter-spacing: 5px;
     z-index: 1;
    }
