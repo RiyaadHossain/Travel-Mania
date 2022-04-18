@@ -18,6 +18,7 @@ const LogIn = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState({ value: "", error: "" });
   const [password, setPassword] = useState({ value: "", error: "" });
+  const [errorMsg, setMsgError] = useState()
 
   // Email and Password
   const [signInWithEmailAndPassword, user, error] =
@@ -47,16 +48,20 @@ const LogIn = () => {
     if (user || githubUser || googleUser) {
       navigate(from);
       toast.success("Logged In");
+      setMsgError("")
     }
     if (loading) {
       return <Spinner/>
     }
     if (error) {
       if (error) {
-        toast.error("Email and Password didn't match", {id: 'test'});
+        setMsgError("Email and Password didn't match")
+        // toast.error("Email and Password didn't match", {id: 'test'});
       }
     }
   }, [user, githubUser, googleUser, error, loading, from, navigate]);
+
+  // Form Submit Function
   const onFormSubmit = (e) => {
     e.preventDefault();
     if (email.value === "") {
@@ -109,6 +114,7 @@ const LogIn = () => {
             </p>
           </div>
         </form>
+        {errorMsg && <p className="text-red-600 mt-4">{errorMsg}</p>}
         <div className="text-right">
           {" "}
           <button

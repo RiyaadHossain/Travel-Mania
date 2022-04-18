@@ -18,7 +18,7 @@ const Navbar = () => {
 
   return (
     <div className="container mx-auto flex justify-between items-center h-16">
-      <div>
+      <div className="hidden md:block">
         <h1 className="text-2xl font-bold">Travelmania</h1>
       </div>
       <nav>

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import auth from "../../../Firebase/Firebase";
-import { useCreateUserWithEmailAndPassword, useSendEmailVerification, useSignInWithGithub, useSignInWithGoogle } from "react-firebase-hooks/auth";
+import { useCreateUserWithEmailAndPassword,  useSignInWithGithub, useSignInWithGoogle } from "react-firebase-hooks/auth";
 import toast from "react-hot-toast";
 import Google from "../../../Assets/Icon/google.png"
 import Github from "../../../Assets/Icon/github-black.png"
@@ -17,7 +17,7 @@ const SignUp = () => {
 
   // Email and Password
   const [createUserWithEmailAndPassword, user, error] =
-    useCreateUserWithEmailAndPassword(auth);
+    useCreateUserWithEmailAndPassword(auth, {sendEmailVerification: true});
 
   // Google Sign Up
   const [signInWithGoogle, googleUser] = useSignInWithGoogle(auth);
@@ -25,8 +25,7 @@ const SignUp = () => {
   // Github Sign Up
   const [signInWithGithub, githubUser] = useSignInWithGithub(auth);
 
-  // Send Varification Mail
-  const [sendEmailVerification] = useSendEmailVerification(auth);
+
 
   const onEmailBlur = (e) => {
     const email = e.target.value;
@@ -55,7 +54,7 @@ const SignUp = () => {
   useEffect(() => {
     if (user || githubUser || googleUser) {
       navigate('/')
-      toast.success("Varification Mail Sending")
+      toast.success("Varification Mail Sent")
     }
     if (error) {
       // toast.error("An Error Occurred")
@@ -75,8 +74,8 @@ const SignUp = () => {
       setPassword({value: '', error: 'Confirm Password is Required'})
     }
     if (email.value && password.value === confirmPassword.value) {
-      createUserWithEmailAndPassword(email.value, password.value)
-      await sendEmailVerification()
+      await createUserWithEmailAndPassword(email.value, password.value)
+      
     }
   }
 
