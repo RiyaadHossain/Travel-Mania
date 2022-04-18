@@ -37,7 +37,7 @@ const Blogs = () => {
         </div>
         <div className="flex flex-col lg:flex-row gap-6 pt-24">
           <img
-            className="max-w-[500px]  object-cover rounded border border-gray-400"
+            className="max-w-[500px] object-cover rounded border border-gray-400"
             src={Blog2}
             alt=""
           />
