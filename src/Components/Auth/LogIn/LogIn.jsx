@@ -10,9 +10,10 @@ import { useLocation, useNavigate } from "react-router-dom";
 import auth from "../../../Firebase/Firebase";
 import Google from "../../../Assets/Icon/google.png";
 import Github from "../../../Assets/Icon/github-black.png";
+import Spinner from "../../Spinner/Spinner";
 
 const LogIn = () => {
-  const location = useLocation()
+  const location = useLocation();
   const from = location.state?.from?.pathname || "/";
   const navigate = useNavigate();
   const [email, setEmail] = useState({ value: "", error: "" });
@@ -29,7 +30,7 @@ const LogIn = () => {
   const [signInWithGithub, githubUser] = useSignInWithGithub(auth);
 
   // Reset Password
-  const [sendPasswordResetEmail] = useSendPasswordResetEmail(auth);
+  const [sendPasswordResetEmail, loading] = useSendPasswordResetEmail(auth);
 
   const onEmailBlur = (e) => {
     const email = e.target.value;
@@ -41,15 +42,21 @@ const LogIn = () => {
 
     setPassword({ value: password, error: "" });
   };
+
   useEffect(() => {
     if (user || githubUser || googleUser) {
       navigate(from);
       toast.success("Logged In");
     }
-    if (error) {
-      // toast.error("An Error Occurred")
+    if (loading) {
+      return <Spinner/>
     }
-  }, [user, githubUser, googleUser, error, from, navigate]);
+    if (error) {
+      if (error) {
+        toast.error("Email and Password didn't match", {id: 'test'});
+      }
+    }
+  }, [user, githubUser, googleUser, error, loading, from, navigate]);
   const onFormSubmit = (e) => {
     e.preventDefault();
     if (email.value === "") {
@@ -113,7 +120,7 @@ const LogIn = () => {
                 });
                 setPassword({ value: "", error: "" });
               } else {
-                toast.success("Email Sent")
+                toast.success("Email Sent");
                 await sendPasswordResetEmail(email.value);
               }
             }}
