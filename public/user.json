@@ -2,21 +2,20 @@
   {
     "id": 1,
     "name": "Zyan Malik",
-    "review": " Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea expedita autem sapiente mollitia consequatur voluptas nihil magnam est error deserunt.",
+    "review": "He provides absolutely an awesome travel guide. I really enjoyed the entire forest tour. At the beginning of our journey, he taught me and my team how to survive in the deep forest which was interesting.",
     "profession": "Softwart Engineer",
     "img": "https://i.ibb.co/hfC7dRn/person1.jpg"
   },
   {
     "id": 2,
     "name": "Raihan Hossain",
-    "review": " Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea expedita autem sapiente mollitia consequatur voluptas nihil magnam est error deserunt.",
-    "profession": "Web Developer",
+    "review": " I have just come from my mountain tour. Two days ago, I and my friends set out for an exciting trip and we learned many survival tips and tricks of a mountain journey.  His precise guidelines helped us a lot.",
     "img": "https://i.ibb.co/K9WCmH5/person2.jpg"
   },
   {
     "id": 3,
     "name": "Marium",
-    "review": " Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea expedita autem sapiente mollitia consequatur voluptas nihil magnam est error deserunt.",
+    "review": "Truly speaking, our sea beach journey was super fantastic. I make out the whole travel programme. I have learned to swim from him which is the most delightful memory of the journey for me.",
     "profession": "Graphic Designer",
     "img": "https://i.ibb.co/5YBvT00/person3.jpg"
   }

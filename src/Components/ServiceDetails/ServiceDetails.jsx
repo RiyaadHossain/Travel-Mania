@@ -14,7 +14,7 @@ const ServiceDetails = ({ service }) => {
       <div className="px-8 py-4">
         <h3 className="text-3xl font-semibold">{name}</h3>
         <p className="text-2xl font-bold my-2">${price}</p>
-        <p className="text-lg">{description}</p>
+        <p className="text-[19px] text-slate-600">{description}</p>
 
         <button
         onClick={() => navigate("/checkout")}  className="fancy-button2 mt-4">

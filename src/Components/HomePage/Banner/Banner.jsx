@@ -9,9 +9,7 @@ const Banner = () => {
           Life is short and the world is wide!
         </h1>
         <p className="text-xl my-7 font-thin text-slate-300 max-w-[600px] mx-auto">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate
-          eligendi accusantium ipsa totam quis explicabo cum doloremque possimus
-          cumque omnis.
+        Travelmania allows you to make out fantastic travel journeys to make unforgetable memories. We offer three different categories of your travel destination. We teach you techniques that might be essential in accident cases.
         </p>
         <div className="flex justify-center">
           <button className="facy-button1">

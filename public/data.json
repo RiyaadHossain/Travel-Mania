@@ -3,21 +3,21 @@
     "id": 1,
     "name": "Sea Beach Tour Guide",
     "price": 899,
-    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi saepe aliquid at minima, suscipit neque nam culpa eos esse amet libero maiores, deserunt fugiat cumque quo tempora quae? In, commodi!",
+    "description": "Here is our beautiful Seb Beach Tour. In this, programme you will explore the longest sea beach in the world named 'Cox's Bazar' located in Asia.",
     "img": "https://i.ibb.co/QbMrtDc/SeaBeach.jpg"
   },
   {
     "id": 2,
     "name": "Mountain Tour Guide",
     "price": 620,
-    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi saepe aliquid at minima, suscipit neque nam culpa eos esse amet libero maiores, deserunt fugiat cumque quo tempora quae? In, commodi!",
+    "description": "Our Mountine tour is destinated especially for the people who are introverts. Tour lovers will find an immense joy and excitement in this programme.",
     "img": "https://i.ibb.co/RDtmyQT/Mountain.jpg"
   },
   {
     "id": 3,
     "name": "Forest Tour Guide",
     "price": 390,
-    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi saepe aliquid at minima, suscipit neque nam culpa eos esse amet libero maiores, deserunt fugiat cumque quo tempora quae? In, commodi!",
+    "description": "In forest tour programme, we let you discover the  silent vibes of the deep forest. Travellers will enjoy fire camp besides fireplace and river.",
     "img": "https://i.ibb.co/YfxGt3M/Forest.jpg"
   }
 ]

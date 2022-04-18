@@ -27,8 +27,8 @@ const About = () => {
             building any project. Moreover, I don't give up even if I get any
             errors while coding. Rather, I read the error message and try to
             carefully fix the error by observing my code. Also, I search on
-            Google whenever I can't resolve my code bug on my own. This is how I
-            work to accomplish my goal. 🙂
+            Google whenever I can't resolve my code bug on my own. This is how I actually work to
+            chase my goal. 🙂
           </p>
         </div>
       </div>
