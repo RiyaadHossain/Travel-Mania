@@ -1,14 +1,14 @@
 # Project Name: Travelmania
 
-### Live Site: [Link] (https://common-project-000.web.app/)
+### Live Site: [Link](https://common-project-000.web.app/)
 
 ##### Description:
 
 <li>This website is a Single Page Application</li>
 <li>This is a Travel Guide Website</li>
-<li>In this site, I implement Firebase for user Authentication</li>
+<li>In this site, I implemented Firebase for user Authentication</li>
 <li>This site has 7 pages including '404 page'</li>
-<li>I use Tailwind CSS for styling</li>
+<li>I set a protected page named "Checkout" and after login the user can have access to the page</li>
 
 <hr>
 
