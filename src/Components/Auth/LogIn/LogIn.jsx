@@ -1,16 +1,19 @@
 import React, { useEffect, useState } from "react";
 import {
+  useSendPasswordResetEmail,
   useSignInWithEmailAndPassword,
   useSignInWithGithub,
   useSignInWithGoogle,
 } from "react-firebase-hooks/auth";
 import toast from "react-hot-toast";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import auth from "../../../Firebase/Firebase";
 import Google from "../../../Assets/Icon/google.png";
 import Github from "../../../Assets/Icon/github-black.png";
 
 const LogIn = () => {
+  const location = useLocation()
+  const from = location.state?.from?.pathname || "/";
   const navigate = useNavigate();
   const [email, setEmail] = useState({ value: "", error: "" });
   const [password, setPassword] = useState({ value: "", error: "" });
@@ -25,13 +28,13 @@ const LogIn = () => {
   // Github Sign Up
   const [signInWithGithub, githubUser] = useSignInWithGithub(auth);
 
+  // Reset Password
+  const [sendPasswordResetEmail] = useSendPasswordResetEmail(auth);
+
   const onEmailBlur = (e) => {
     const email = e.target.value;
-    if (/\S+@\S+\.\S+/.test(email)) {
-      setEmail({ value: email, error: "" });
-    } else {
-      setEmail({ value: "", error: "Email is Invalid" });
-    }
+
+    setEmail({ value: email, error: "" });
   };
   const onPasswordBlur = (e) => {
     const password = e.target.value;
@@ -40,13 +43,13 @@ const LogIn = () => {
   };
   useEffect(() => {
     if (user || githubUser || googleUser) {
-      navigate("/");
+      navigate(from);
       toast.success("Logged In");
     }
     if (error) {
       // toast.error("An Error Occurred")
     }
-  }, [user, githubUser, googleUser, error, navigate]);
+  }, [user, githubUser, googleUser, error, from, navigate]);
   const onFormSubmit = (e) => {
     e.preventDefault();
     if (email.value === "") {
@@ -99,6 +102,26 @@ const LogIn = () => {
             </p>
           </div>
         </form>
+        <div className="text-right">
+          {" "}
+          <button
+            onClick={async () => {
+              if (email.value === "") {
+                setEmail({
+                  value: "",
+                  error: "Please Enter Email to Reset Password",
+                });
+                setPassword({ value: "", error: "" });
+              } else {
+                toast.success("Email Sent")
+                await sendPasswordResetEmail(email.value);
+              }
+            }}
+            className="text-red-600 text-lg mt-2"
+          >
+            Reset Password
+          </button>
+        </div>
         <div className="flex items-center justify-center mt-8">
           <div className="h-[1px] w-1/3 bg-red-600"></div>
           <div className="mx-4 font-semibold">
