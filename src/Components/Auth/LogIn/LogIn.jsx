@@ -1,15 +1,29 @@
 import React, { useEffect, useState } from "react";
-import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
+import {
+  useSignInWithEmailAndPassword,
+  useSignInWithGithub,
+  useSignInWithGoogle,
+} from "react-firebase-hooks/auth";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import auth from "../../../Firebase/Firebase";
+import Google from "../../../Assets/Icon/google.png";
+import Github from "../../../Assets/Icon/github-black.png";
 
 const LogIn = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState({ value: "", error: "" });
   const [password, setPassword] = useState({ value: "", error: "" });
+
+  // Email and Password
   const [signInWithEmailAndPassword, user, error] =
     useSignInWithEmailAndPassword(auth);
+
+  // Google Sign Up
+  const [signInWithGoogle, googleUser] = useSignInWithGoogle(auth);
+
+  // Github Sign Up
+  const [signInWithGithub, githubUser] = useSignInWithGithub(auth);
 
   const onEmailBlur = (e) => {
     const email = e.target.value;
@@ -22,19 +36,17 @@ const LogIn = () => {
   const onPasswordBlur = (e) => {
     const password = e.target.value;
 
-      setPassword({ value: password, error: "" });
-   
-    
+    setPassword({ value: password, error: "" });
   };
   useEffect(() => {
-    if (user) {
+    if (user || githubUser || googleUser) {
       navigate("/");
       toast.success("Logged In");
     }
     if (error) {
       // toast.error("An Error Occurred")
     }
-  }, [user, error, navigate]);
+  }, [user, githubUser, googleUser, error, navigate]);
   const onFormSubmit = (e) => {
     e.preventDefault();
     if (email.value === "") {
@@ -67,7 +79,9 @@ const LogIn = () => {
             type="password"
             placeholder="Password"
           />
-          {password.error && <p className="text-red-600">⚠️ {password.error}</p>}
+          {password.error && (
+            <p className="text-red-600">⚠️ {password.error}</p>
+          )}
           <div className="flex justify-between mt-8 items-center">
             <input
               className="bg-red-600 text-white py-2 w-1/3 text-lg rounded"
@@ -85,6 +99,33 @@ const LogIn = () => {
             </p>
           </div>
         </form>
+        <div className="flex items-center justify-center mt-8">
+          <div className="h-[1px] w-1/3 bg-red-600"></div>
+          <div className="mx-4 font-semibold">
+            <span>Or</span>
+          </div>
+          <div className="h-[1px] w-1/3 bg-red-600"></div>
+        </div>
+        <div className="flex  gap-7 mt-4">
+          <button
+            onClick={() => signInWithGoogle()}
+            className="flex hover:bg-slate-500  items-center border border-gray-500 w-1/2 mx-auto px-2 py-1 rounded-full mt-3"
+          >
+            <img src={Google} className="w-10" alt="" />
+            <span className="text-lg ml-3 font-semibold text-gray-800 hover:text-white">
+              Continue with Google
+            </span>
+          </button>
+          <button
+            onClick={() => signInWithGithub()}
+            className="flex hover:bg-slate-500  items-center border border-gray-500 w-1/2 mx-auto px-2 py-1 rounded-full mt-3"
+          >
+            <img src={Github} className="w-10" alt="" />
+            <span className="text-lg ml-3 font-semibold text-gray-800 hover:text-white">
+              Continue with Github
+            </span>
+          </button>
+        </div>
       </div>
     </div>
   );
